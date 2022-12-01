@@ -1,0 +1,115 @@
+
+.container{
+  text-align:center;
+padding: 30px 0;
+}
+.doctors {
+  background-color: #f9fafc;
+
+}
+.section-title p{
+  margin-bottom: 25px;
+}
+.doctors .member {
+  position: relative;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.doctors .member .pic {
+  overflow: hidden;
+  width: 110px;
+  border-radius:50%;
+}
+
+.doctors .member .pic img {
+  transition: ease-in-out 0.3s;
+}
+
+.doctors .member:hover img {
+  transform: scale(1.1);
+  border-radius:50%;
+
+}
+
+.doctors .member .member-info {
+  padding-left: 30px;
+}
+
+.doctors .member h4 {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 14px;
+ color: #08404f;
+ position: relative;
+ display: block;
+ padding-bottom: 10px;
+
+}
+// .doctors .member h4::after {
+//   content: '';
+//   position: absolute;
+//   display: block;
+//   width: 100px;
+//   height: 1px;
+//   background-color: var(--color-primary);
+//   bottom: 0;
+//   right: 28%;
+// }
+.doctors .member span {
+  font-size: 14px;
+  font-weight: 400;
+  padding-top: 10px;
+
+}
+
+
+
+.doctors .member p {
+  margin: 10px 30px 0 0;
+  font-size: 14px;
+  font-family: 'IRANSans_Light' !important;
+
+}
+
+.doctors .member .social {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+}
+
+.doctors .member .social a {
+  transition: ease-in-out 0.3s;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-secondary);
+  font-size: 18px;
+  display: inline-block;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  text-align: center;
+}
+
+.doctors .member .social a i {
+  color: var(--color-primary);
+  font-size: 16px;
+  margin:0 2px;
+}
+
+.doctors .member .social a:hover {
+  background-color: var(--color-primary);
+
+
+}
+.doctors .member .social a:hover i {
+  color: #fff;
+
+}

@@ -1,0 +1,173 @@
+#footer {
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+}
+
+#footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 95%;
+  background: var(--color-thirdandary);
+  z-index: 1;
+}
+
+#footer .footer-top {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 25px 0 30px;
+}
+
+#footer .footer-top h3 {
+  color: #fff;
+  font-size: 14px;
+  font-family: 'IRANSans_Light' !important;
+}
+
+
+#footer .footer-top .footer-newsletter {
+  margin: auto;
+  padding: 5px;
+}
+#footer .footer-top .footer-newsletter h3 {
+  text-align: right;
+  font-family: 'IRANSans_Light' !important;
+}
+#footer .footer-top .footer-newsletter form {
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+#footer .footer-top .footer-newsletter form input[type=mobile] {
+  border: 0;
+  padding: 3px 8px;
+  width: calc(100% - 1px);
+}
+
+#footer .footer-top .footer-newsletter form input[type=submit] {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  bottom: 0;
+  border: 0;
+  font-size: 16px;
+  padding: 0 20px;
+  background: var(--color-primary);
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 5px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#footer .footer-top .footer-newsletter form input[type=submit]:hover {
+  background: var(--color-primary);
+}
+
+#footer .footer-top .footer-newsletter ul li {
+  font-size: 12px;
+}
+
+#footer .download-btn {
+  font-family: 'IRANSans_Light' !important;
+  font-size: 12px;
+  display: inline-block;
+  padding: 7px 34px 10px 56px;
+  border-radius: 5px;
+  transition: 0.5s;
+  color: #fff;
+  border: #fff 1px solid;
+  position: relative;
+}
+
+#footer .download-btn:hover {
+  background: var(--color-primary);
+  border: var(--color-primary) 1px solid;
+}
+
+#footer .download-btn i {
+  font-size: 18px;
+  position: absolute;
+  left: 19px;
+  top: 9px;
+}
+
+#footer .download-btn+.download-btn {
+  margin-right: 30px;
+}
+
+#footer .footer-bottom {
+  border-top: 0.5px solid var(--color-fourandary);
+  z-index: 2;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+#footer .social-links {
+  text-align: center;
+  float: left;
+}
+
+#footer .footer-bottom .social-links a {
+  display: inline-block;
+  line-height: 1;
+  margin-top: -15px;
+  padding: 0px 5px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+#footer .footer-bottom .social-links a:hover {
+  transform: scale(1.12);
+}
+#footer .footer-bottom .social-links a svg {
+  fill: #fff;
+  width: 25px;
+  height: 25px;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+#footer .namad-btn{
+  padding: 5px 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 1px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+#footer .namad-btn img {
+  max-width: 40px;
+  
+}
+#footer .namad-btn:hover {
+  transform: scale(1.04);
+}
+
+#footer .copyright {
+  text-align: center;
+  float: right;
+  font-size: 12px;
+}
+#footer .copyright a {
+  font-size: 11px;
+  font-family: 'IRANSans_Light' !important;
+}
+@media (max-width: 768px) {
+
+  #footer .copyright,
+  #footer .social-links {
+    padding: 5px;
+    float: none;
+    text-align: ceneter;
+  }
+}

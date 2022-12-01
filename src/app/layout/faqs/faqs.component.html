@@ -1,0 +1,12 @@
+  <section class="theme-container px-3 py-4">
+    <div class="row m-0 justify-content-center">
+      <mat-accordion class="w-100">
+        <mat-expansion-panel *ngFor="let item of faqs">
+          <mat-expansion-panel-header>
+            <mat-panel-title> {{item.question}} </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-panel-description> {{item.reply}} </mat-panel-description>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </section>

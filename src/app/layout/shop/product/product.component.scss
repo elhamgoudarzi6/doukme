@@ -1,0 +1,278 @@
+.card {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
+  margin: 10px;
+  padding: 15px 20px;
+}
+
+.card-seller {
+  border-radius: 10px;
+  background-color: rgb(248, 248, 248);
+  padding: 30px 35px 25px;
+  margin-right: 10px;
+  border-radius: 10px;
+  justify-content: center;
+  border: 1px solid #ebeaea;
+}
+
+.card-seller h2 {
+  font-size: 14px;
+}
+
+.dis {
+  color: #ccc;
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+.logo-img {
+  max-width: 90%;
+}
+
+.add-btn {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 5px 50px;
+  font-size: 14px;
+  margin-top: 15px;
+  border-radius: 5px;
+
+}
+
+.add-btn:hover {
+  color: #fff;
+}
+
+.card li {
+  font-size: 10px;
+}
+
+:host ::ng-deep .p-galleria-thumbnail-prev span,
+:host ::ng-deep .p-galleria-thumbnail-next span {
+  border-radius: 50% !important;
+  font-size: 12px;
+  color: #777;
+}
+
+
+
+:host ::ng-deep .p-galleria .p-galleria-thumbnail-container {
+  background-color: #fff;
+  padding: 5px 0;
+}
+
+.full-screen {
+  position: absolute;
+  top: -25px;
+  left: 10px;
+  color: #cdc9c9;
+}
+
+.slide-img {
+  border-radius: 5px;
+  max-width: 300px;
+}
+
+.info {
+  padding: 5px 15px;
+}
+
+.info h1 {
+  font-size: 14px;
+
+}
+
+p {
+  font-size: 13px;
+  font-family: 'IRANSans_Light' !important;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+.info h6 {
+  font-size: 14px;
+}
+
+.info button {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgb(231, 231, 231);
+  border-radius: 50%;
+  margin-left: 5px;
+  padding: 10px;
+}
+
+:host ::ng-deep .tabview {
+  color: #777;
+}
+
+:host ::ng-deep .tabview .p-tabview-nav {
+  padding: 0;
+  font-size: 14px;
+  border-color: transparent;
+}
+
+/* not selected */
+:host ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  color: #777;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-panels {
+  text-align: justify;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-left-icon {
+  margin-left: 8px;
+}
+
+/* hover */
+:host ::ng-deep .p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+  border-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* selected */
+:host ::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  border-bottom-width: 2px;
+  outline-color: transparent;
+}
+
+
+:host ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+  font-size: 14px;
+  font-family: 'IRANSans_Light' !important;
+}
+
+
+:host::ng-deep .p-badge.p-badge-success {
+  border-radius: 5px;
+  font-family: 'IRANSans_Light' !important;
+  font-size: 10px;
+  border-radius: 15px;
+  padding: 0 14px;
+}
+
+:host::ng-deep .p-badge.p-badge-danger {
+  border-radius: 15px;
+  font-size: 10px;
+  background-color: var(--color-primary);
+  font-family: 'IRANSans_Light' !important;
+  padding: 0 14px;
+  margin-left: 5px;
+}
+
+:host::ng-deep .p-badge.p-badge-warning {
+  border-radius: 15px;
+  font-family: 'IRANSans_Light' !important;
+  font-size: 10px;
+  background-color: #ccc;
+  color: #fff;
+  padding: 0 14px;
+}
+
+:host::ng-deep .mat-divider {
+  border-color: #ececec;
+}
+
+.comment {
+  // background-color: #fff;
+  background: #fafafa;
+
+  // box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
+  border-radius: 5px;
+  padding: 15px 20px 10px;
+  margin: 45px 5px 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment .c-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: -40px;
+}
+
+.comment p {
+  font-size: 13px;
+  text-align: justify;
+  color: #111;
+}
+
+.comment h6 {
+  font-size: 12px;
+  text-align: center;
+  align-self: center;
+  color: #777;
+  margin-right: 10px;
+  margin-top: -5px;
+}
+
+:host::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+  display: none;
+  background-color: #999;
+  margin-top: 10px;
+}
+
+:host::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator button:hover {
+  background-color: var(--color-primary);
+}
+
+:host::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background-color: var(--color-primary);
+}
+
+@media screen and (max-width: 600px) {
+
+  :host::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+    display: block;
+  }
+  .card {
+    margin:20px -5px;
+  }
+
+}
+
+
+
+
+:host::ng-deep.carousel .carousel-control-next-icon {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+:host::ng-deep.carousel .carousel-control-prev-icon {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+:host::ng-deep.carousel-inner {
+  border-radius: 5px !important;
+}
+
+:host::ng-deep [type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  border-radius: 5px;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+:host::ng-deep [type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled):hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}

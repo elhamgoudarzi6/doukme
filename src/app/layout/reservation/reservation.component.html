@@ -1,0 +1,119 @@
+<p-toast position="center"></p-toast>
+<section class="theme-container">
+  <div class="card">
+    <p-panel  class="mt-2" header="راهنمای نوبت گیری" [toggleable]="true" [collapsed]="true" iconPos="left" collapseIcon="pi pi-minus-circle" expandIcon="pi pi-plus-circle">
+        <p-timeline [value]="events" [align]="'alternate'" styleClass="customized-timeline">
+          <ng-template pTemplate="marker" let-event>
+            <span class="custom-marker p-shadow-2" [style.backgroundColor]="event.color" [style.color]="event.iconcolor">
+              {{event.icon}}
+            </span>
+          </ng-template>
+          <ng-template pTemplate="content" let-event>
+            <p-card>
+              <ng-template pTemplate="header">
+                <img *ngIf="event.image" [src]="'assets/images/icons/' + event.image" [alt]="event.name" class="img-fluid"
+                  style="width: 40px;text-align: center;display: block;margin:auto;padding-top:20px;" />
+              </ng-template>
+              {{event.status}}
+              <ng-template pTemplate="footer">
+                {{event.detail}}
+              </ng-template>
+            </p-card>
+          </ng-template>
+        </p-timeline>
+      </p-panel>
+    <div class="searchbar">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 p-3">
+          <span class="p-fluid">
+            <p-autoComplete [lazy]="true" (onSelect)="onSelectName($event)" [suggestions]="filteredNames"
+              placeholder="جستجوی نام و نام خانوادگی ..." (completeMethod)="filterName($event)" field="fullName">
+            </p-autoComplete>
+          </span>
+        </div>
+      </div>
+    </div>
+    <form class="w-100">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 mb-1">
+              <span class="p-fluid">
+                <p-autoComplete [lazy]="true" [dropdown]="true" (onSelect)="onCatChange($event)"
+                  (onClear)="onCatChange($event)" [suggestions]="filteredCats" placeholder="جستجوی مراکز ..."
+                  (completeMethod)="filterCat($event)" field="title">
+                </p-autoComplete>
+              </span>
+            </div>
+            <div class="col-lg-4 mb-1">
+              <span class="p-fluid">
+                <p-autoComplete [lazy]="true" [dropdown]="true" (onSelect)="onSubCatChange($event)"
+                  (onClear)="onSubCatChange($event)" [suggestions]="filteredSubCats"
+                  placeholder="جستجوی زیر دسته مراکز ..." (completeMethod)="filterSubCat($event)" field="title">
+                </p-autoComplete>
+              </span>
+            </div>
+            <div class="col-lg-4 mb-1">
+              <span class="p-fluid">
+                <p-autoComplete [lazy]="true" [dropdown]="true" (onSelect)="onEmployeeChange($event)"
+                  (onClear)="onEmployeeChange($event)" [suggestions]="filteredEmployees"
+                  placeholder="جستجوی نام و نام خانوادگی ..." (completeMethod)="filterEmployee($event)"
+                  field="fullName">
+                </p-autoComplete>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  
+  </div>
+  <div class="card">
+    <p-table [value]="searchResult" #dt dataKey="fullName" [rows]="6" [paginator]="true" selectionMode="single"
+      dataKey="fullName" [globalFilterFields]="['ability', 'fullName']">
+      <ng-template pTemplate="caption">
+        <div class="table-header row">
+          <div class="col-sm-6 font-iran-bold">لیست مراکز و افراد</div>
+          <div class="col-sm-12">
+            <span class="p-input-icon-left w-100 mt-3">
+              <i class="pi pi-search"></i>
+              <input pInputText type="text" class="w-100" placeholder="جستجوی نام و نام خانوادگی یا تخصص"
+                (input)="dt.filterGlobal($any($event.target).value, 'contains')" />
+            </span>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="EmployeeCat">مراکز
+            <!-- <p-sortIcon field="EmployeeCat"></p-sortIcon> -->
+          </th>
+          <th pSortableColumn="EmployeeSubCat"> زیر دسته
+            <!-- <p-sortIcon field="EmployeeSubCat"></p-sortIcon> -->
+          </th>
+          <th pSortableColumn="fullName">نام و نام خانوادگی
+            <p-sortIcon field="fullName"></p-sortIcon>
+          </th>
+          <th pSortableColumn="ability">تخصص
+            <p-sortIcon field="ability"></p-sortIcon>
+          </th>
+          <th>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-searchResult>
+        <tr>
+          <td>{{searchResult.EmployeeCat[0].title}}</td>
+          <td>{{searchResult.EmployeeSubCat[0].title}}</td>
+          <td>{{searchResult.fullName}}</td>
+          <td>{{searchResult.ability}}</td>
+          <td class="justify-content-center">
+            <button (click)="redirectToProfile(searchResult._id)" class="btn nobat-btn" mat-raised-button
+              type="submit">رزرو نوبت
+            </button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</section>

@@ -1,0 +1,277 @@
+:host ::ng-deep .custom-marker {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3 !important;
+  border-radius: 50%;
+  border: 0.5px solid #fafafa;
+  z-index: 1;
+  font-size: 13px;
+  font-family: IRANSans_Bold;
+}
+
+::ng-deep .p-timeline-event-content,
+::ng-deep .p-timeline-event-opposite {
+  line-height: 1;
+}
+
+:host ::ng-deep .p-card .p-card-title {
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: -2px;
+  font-family: IRANSans_Bold;
+  color: #4d4d4d;
+}
+
+:host ::ng-deep .custom-marker {
+  color: #4d4d4d;
+}
+
+:host::ng-deep .p-timeline-vertical.p-timeline-alternate .p-timeline-event:nth-child(even) .p-timeline-event-oppositeP {
+  font-size: 12px;
+  color: #fff;
+}
+
+.card {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
+  margin: 20px;
+  padding: 40px 50px;
+}
+
+.card .searchbar {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.nobat-btn {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 5px 50px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.nobat-btn:hover {
+  color: #fff;
+  background: var(--color-primary);
+}
+
+h6 {
+  font-size: 16px;
+  color: #555;
+}
+
+
+
+
+input,
+:host::ng-deep .p-inputtext,
+:host::ng-deep .p-dropdown,
+:host::ng-deep .p-chips,
+.p-inputtext,
+.p-dropdown,
+.p-chips,
+textarea {
+  width: 100% !important;
+}
+
+:host::ng-deep .p-datatable .p-sortable-column.p-highlight:hover {
+  color: var(--color-primary);
+}
+
+:host::ng-deep .p-datatable .p-sortable-column.p-highlight {
+  color: var(--color-primary);
+}
+
+:host::ng-deep .p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
+  color: var(--color-primary);
+}
+
+:host::ng-deep .p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon:hover {
+  color: var(--color-primary);
+}
+
+:host::ng-deep .p-datatable .p-sortable-column.p-highlight:hover .p-sortable-column-icon {
+  color: var(--color-primary);
+}
+
+:host::ng-deep .p-datatable .p-datatable-thead>tr>th {
+  font-size: 14px;
+}
+
+:host::ng-deep .p-datatable .p-sortable-column.p-highlight {
+  color: var(--color-primary);
+}
+
+:host::ng-deep .p-datatable .p-sortable-column.p-highlight:hover {
+  color: var(--color-primary);
+}
+
+:host::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+  font-family: 'IRANSans_Light' !important;
+  flex-direction: row;
+}
+
+:host::ng-deep .p-datatable.p-datatable-hoverable-rows .p-datatable-tbody>tr:not(.p-highlight):hover {
+  background: #fafafa;
+}
+
+:host::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 12px;
+}
+
+:host ::ng-deep {
+  .p-datatable-responsive-demo .p-datatable-tbody>tr>td .p-column-title {
+    display: none;
+  }
+}
+
+:host::ng-deep .p-card {
+  border-radius: 10px;
+}
+
+:host::ng-deep .p-card .p-card-content {
+  font-size: 14px;
+  text-align: center;
+  font-family: 'IRANSans_Bold' !important;
+  margin-top: -15px;
+
+}
+
+:host::ng-deep .p-card .p-card-footer {
+  font-size: 14px;
+  text-align: center;
+  font-family: 'IRANSans_Light' !important;
+  margin-top: -15px;
+}
+
+:host::ng-deep .p-inputtext .p-inputtext {
+  margin-left: -40px;
+  padding-left: -40px;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    margin: 20px 5px;
+    padding: 40px 30px;
+  }
+}
+
+.p-autocomplete-panel .p-autocomplete-items {
+  border: none !important;
+  outline: none !important;
+}
+
+:host::ng-deep .p-fluid .p-button-icon-only {
+  background-color: transparent !important;
+  color: #999;
+  border-color: #d6d6d6 !important;
+  border-right: none;
+}
+
+:host::ng-deep .p-fluid .p-button-icon-only:hover {
+  color: rgb(219, 219, 219);
+}
+
+
+@media screen and (max-width: 960px) {
+  :host ::ng-deep .customized-timeline .p-timeline-event:nth-child(even) {
+    flex-direction: row !important;
+  }
+
+  :host::ng-deep .p-datatable .p-datatable-tbody>tr>td:nth-child(even) {
+    flex-direction: row !important;
+
+  }
+
+  .card {
+    margin: 20px 5px;
+    padding: 40px 30px;
+  }
+ 
+  :host ::ng-deep .customized-timeline .p-timeline-event-content {
+    text-align: left !important;
+  }
+
+  :host ::ng-deep .customized-timeline .p-timeline-event-opposite {
+    flex: 0;
+  }
+
+  :host ::ng-deep .customized-timeline .p-card {
+    margin: 5px 0 0;
+    padding: 5px;
+  }
+
+  :host::ng-deep .p-card .p-card-content {
+    font-size: 12px !important;
+  }
+
+  :host::ng-deep .p-card .p-card-footer {
+    font-size: 12px !important;
+  }
+
+}
+
+:host ::ng-deep .p-card .p-card-title {
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: -2px;
+  font-family: IRANSans_Bold;
+  color: #4d4d4d;
+}
+
+:host ::ng-deep .custom-marker {
+  color: #4d4d4d;
+}
+
+:host::ng-deep .p-timeline-vertical.p-timeline-alternate .p-timeline-event:nth-child(even) .p-timeline-event-oppositeP {
+  font-size: 12px;
+  color: #fff;
+}
+
+::ng-deep .customized-timeline {
+  margin: 20px 0px;
+}
+
+:host::ng-deep .p-card {
+  border-radius: 10px;
+  padding: 20px 10px;
+  margin: 0 20px;
+}
+
+:host::ng-deep .p-card .p-card-content {
+  font-size: 14px;
+  text-align: center;
+  font-family: 'IRANSans_Bold' !important;
+  margin-top: -15px;
+
+}
+
+:host::ng-deep .p-card .p-card-footer {
+  font-size: 14px;
+  text-align: center;
+  font-family: 'IRANSans_Light' !important;
+  margin-top: -15px;
+}
+:host::ng-deep .p-panel .p-panel-content{
+  background-color: #fefefe !important;
+
+}
+
+:host::ng-deep .p-panel.p-panel-toggleable .p-panel-header {
+  border-radius: 5px !important;
+  background-color: #fcfcfc !important;
+}
+
+:host::ng-deep .p-panel .p-panel-header .p-panel-title {
+  font-family: 'IRANSans_Bold' !important;
+  font-size: 14px;
+}

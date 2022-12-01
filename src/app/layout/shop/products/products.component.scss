@@ -1,0 +1,475 @@
+input,
+:host::ng-deep .p-inputtext,
+:host::ng-deep .p-dropdown,
+:host::ng-deep .p-chips,
+.p-inputtext,
+.p-dropdown,
+.p-chips,
+textarea {
+  width: 100% !important;
+}
+
+:host::ng-deep .p-inputtext:enabled,
+input {
+  border-radius: 2px;
+}
+
+:host::ng-deep .p-autocomplete-panel .p-autocomplete-items {
+  border: none !important;
+  outline: none !important;
+}
+
+:host::ng-deep .p-inputtext:enabled,
+input {
+  border-radius: 5px !important;
+}
+
+:host::ng-deep .p-fluid .p-button-icon-only {
+  background-color: var(--color-primary) !important;
+  color: #fff;
+  border-color: #d6d6d6 !important;
+  border-right: none;
+  border-radius: 5px;
+}
+
+:host::ng-deep .p-fluid .p-button-icon-only:hover {
+  color: #fff;
+}
+
+:host::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+  background-color: var(--color-primary) !important;
+}
+
+.filter-box {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
+  padding: 55px 30px;
+}
+
+.card-sort {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
+  padding: 20px 20px;
+  margin: 0 -15px;
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .card-sort {
+    display: none;
+  }
+
+  .card-sort-mobile {
+    display: block;
+  }
+
+  .card-sort-mobile {
+    background-color: #fff;
+    position: fixed;
+    box-shadow: 0px -1px 2px rgb(0 0 0 / 20%) !important;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 999;
+    padding: 8px;
+  }
+
+  :host::ng-deep .p-selectbutton .p-button.p-highlight {
+    font-size: 12px !important;
+  }
+
+  :host::ng-deep .p-buttonset .p-button:not(:first-of-type):not(:last-of-type) {
+    font-size: 12px !important;
+  }
+
+  :host::ng-deep .p-buttonset .p-button:first-of-type {
+    font-size: 12px !important;
+  }
+
+  :host::ng-deep .p-buttonset .p-button:last-of-type {
+    font-size: 12px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-sort-mobile {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 900px) and (min-width: 600px),
+(min-width: 1100px) {
+  .card-sort-mobile {
+    display: none;
+  }
+}
+
+:host::ng-deep .p-selectbutton .p-button.p-highlight:hover {
+  background-color: var(--color-primary) !important;
+}
+
+:host::ng-deep .p-selectbutton .p-button:not(.p-disabled):not(.p-highlight):hover {
+  background-color: transparent !important;
+}
+
+:host::ng-deep .p-selectbutton .p-button.p-highlight {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  border-radius: 5px;
+  font-family: 'IRANSans_Bold' !important;
+  font-size: 14px;
+}
+
+:host::ng-deep .p-buttonset .p-button:not(:first-of-type):not(:last-of-type) {
+  border-radius: 5px;
+  font-family: 'IRANSans_Bold' !important;
+  font-size: 14px;
+}
+
+:host::ng-deep .p-buttonset .p-button:first-of-type {
+  border-radius: 5px;
+  font-family: 'IRANSans_Bold' !important;
+  font-size: 14px;
+}
+
+:host::ng-deep .p-buttonset .p-button:last-of-type {
+  border-radius: 5px;
+  font-family: 'IRANSans_Bold' !important;
+  font-size: 14px;
+}
+
+.pi {
+  padding-left: 5px;
+}
+
+
+
+//products
+.dis {
+  color: #ccc;
+  font-size: 12px;
+  text-decoration: line-through;
+}
+
+:host::ng-deep .p-carousel-container {
+  padding: 5px;
+  justify-content: center;
+}
+
+:host::ng-deep .p-carousel .p-carousel-indicators {
+  display: none;
+}
+
+:host::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  margin-top: 15px;
+}
+
+:host::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+  border-radius: 20px;
+  margin-top: 15px;
+}
+
+::ng-deep .p-carousel .p-carousel-header {
+  padding: 5px 10px;
+  font-family: 'IRANSans_Bold' !important;
+  font-size: 16px;
+}
+
+::ng-deep .p-carousel .p-carousel-content .p-carousel-prev {
+  background-color: #f3f3f3 !important;
+
+}
+
+::ng-deep .p-carousel .p-carousel-content .p-carousel-next {
+  background-color: #f3f3f3 !important;
+
+}
+
+.card-filter {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  padding: 55px 20px;
+  height: 300px;
+  margin-right: 10px;
+}
+
+.card-paginator {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  padding: 5px;
+  margin: 5px -10px 0;
+}
+
+.card {
+  border-radius: 5px;
+  background-color: #fff;
+  //box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  margin: 10px;
+  padding: 25px 10px;
+}
+
+:host::ng-deep .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+  font-family: 'IRANSans_Light' !important;
+  font-size: 14px;
+}
+
+:host::ng-deep .p-badge.p-badge-success {
+  border-radius: 5px;
+  font-family: 'IRANSans_Bold' !important;
+  font-size: 9px;
+}
+
+:host::ng-deep .p-badge.p-badge-warning {
+  border-radius: 5px;
+  font-family: 'IRANSans_Bold' !important;
+  font-size: 9px;
+}
+
+:host::ng-deep .p-badge.p-badge-danger {
+  border-radius: 5px;
+  font-family: 'IRANSans_Bold' !important;
+  font-size: 9px;
+  top: 10px;
+  right: 20px;
+  position: absolute;
+  background-color: var(--color-primary);
+}
+
+.product-item {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  margin: 5px;
+  padding: 10px 10px 15px;
+}
+
+:host::ng-deep .p-card {
+  padding: 15px 10px 10px;
+  border-radius: 5px;
+  margin: 0 -10px !important;
+}
+
+:host::ng-deep .p-card-footer {
+  margin-top: -20px;
+}
+
+h4 {
+  font-family: 'IRANSans_Bold' !important;
+  font-size: 13px;
+  color: #666;
+  direction: rtl;
+  margin-top: 10px;
+}
+
+.cat {
+  padding: 0 10px 5px;
+  margin-top: -10px;
+  // line-height: 1;
+}
+
+.cat h6 {
+  font-family: 'IRANSans_Bold' !important;
+  font-size: 12px;
+  color: #999;
+}
+
+h6 {
+  font-family: 'IRANSans_Bold' !important;
+  font-size: 13px;
+  color: #666;
+  direction: rtl;
+  text-align: center;
+  margin-top: 10px;
+}
+
+:host::ng-deep .p-button.p-button-icon-only {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  border-radius: 5px;
+}
+
+:host::ng-deep .p-button.p-button-icon-only:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+
+}
+
+//side menu
+
+:host::ng-deep .p-megamenu {
+  direction: ltr;
+  background-color: #fff;
+  border: none;
+  text-align: right;
+  float: right !important;
+  width: 100%;
+  z-index: 200 !important;
+
+}
+
+:host::ng-deep .p-megamenu .p-megamenu-panel .p-megamenu-grid {
+  // float: left;
+  background-color: #fff;
+  top: 0px;
+  right: 200px;
+  position: absolute;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+
+}
+
+:host::ng-deep .p-megamenu .p-megamenu-root-list>.p-menuitem>.p-menuitem-link:hover {
+  background-color: #faf3f3 !important;
+}
+
+:host::ng-deep .p-menu-list {
+  // direction: ltr;
+  z-index: 200 !important;
+  overflow: visible !important;
+}
+
+:host::ng-deep .p-megamenu .p-menuitem {
+  // direction: ltr;
+  z-index: 20 !important;
+  overflow: visible !important;
+
+}
+
+:host::ng-deep .p-megamenu .p-menuitem-link .p-menuitem-text {
+  font-size: 14px;
+  font-family: 'IRANSans_Light' !important;
+}
+
+:host::ng-deep .p-megamenu .p-megamenu-root-list>.p-menuitem>.p-menuitem-link .p-submenu-icon {
+  color: transparent !important;
+  margin-left: 500px;
+}
+
+:host::ng-deep .p-megamenu .p-megamenu-root-list>.p-menuitem>.p-menuitem-link .p-menuitem-text {
+  font-size: 16px;
+  font-family: 'IRANSans_Bold' !important;
+}
+
+:host::ng-deep .p-megamenu .p-menuitem-text {
+  // direction: ltr;
+  z-index: 20 !important;
+  overflow: visible !important;
+}
+
+:host::ng-deep .p-megamenu .p-megamenu-root-list>.p-menuitem>.p-menuitem-link {
+  direction: rtl;
+}
+
+svg {
+  width: 30px;
+  fill: var(--color-primary);
+  transition: all ease-in-out 0.5s;
+}
+
+a svg:hover {
+  transform: scale(1.18);
+}
+
+
+//mobile menu cat
+:host::ng-deep .p-panelmenu {
+  text-align: right;
+  direction: rtl;
+  margin-top: 30px;
+  width: 100% !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-header>a .p-panelmenu-icon {
+  position: absolute;
+  left: 0;
+  margin-right: unset !important;
+  margin-left: 0.5rem;
+}
+
+:host::ng-deep .pi-chevron-right:before {
+  content: "\e900";
+}
+
+:host::ng-deep .pi-angle-right:before {
+  content: "\e931";
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight>a {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: #777 !important;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled)>a {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: #777 !important;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-header>a:focus {
+  box-shadow: none !important;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled)>a:hover {
+  border: none !important;
+  background: transparent !important;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-header>a .p-menuitem-icon {
+  margin-right: unset !important;
+  margin-left: 0.5rem;
+  color: #777;
+
+}
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-text{
+  color: #777 !important;
+
+}
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-panelmenu-icon {
+  left: 0;
+  margin-right: unset !important;
+  margin-left: 0.5rem;
+  color: #777 !important;
+
+}
+
+:host::ng-deep .p-panelmenu-content {
+  padding: 0.25rem 0;
+  border: none !important;
+  background-color: #fff !important;
+  color: #777;
+  border-radius: unset !important;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-icon {
+  color: #777 !important;
+  margin-right: unset !important;
+  margin-left: 0.5rem;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-submenu-list:not(.p-panelmenu-root-submenu) {
+  padding: 0 1rem 0 0 !important;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:focus {
+  box-shadow: none !important;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
+  color: #777 !important;
+}
+
+:host::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover {
+  background: #f3f3f3 !important;
+}
