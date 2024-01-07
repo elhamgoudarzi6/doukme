@@ -1,0 +1,179 @@
+<app-header-shop></app-header-shop>
+
+<p-toast position="center"></p-toast>
+<div class="container-fluid">
+  <div class="card">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row no-gutters justify-content-center">
+          <div class="col-lg-12 col-sm-12 align-self-center">
+            <ul class="list-inline panel-breadcrumb">
+              <li class="list-inline-item pointer" [routerLink]="['/shop']"><i class="pi pi-home"></i></li>
+              <li class="list-inline-item pointer">{{product.ProductCat[0].title}}</li>
+              <li class="list-inline-item pointer">{{product.ProductSubCat[0].title}}</li>
+              <li class="list-inline-item pointer">{{product.ProductSubSubCat[0].title}}</li>
+              <li class="list-inline-item current">{{product.title}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row no-gutters justify-content-center">
+          <div class="col-lg-3 col-sm-12 align-self-center">
+            <!-- <p-galleria [value]="product.info" [responsiveOptions]="responsiveOptions"
+              [containerStyle]="{ 'max-width': '400px', 'margin-top': '2em' }" [numVisible]="5" dir="ltr"
+              thumbnailsPosition="bottom" [autoPlay]="true" [transitionInterval]="2000"
+              [circular]="true" [changeItemOnIndicatorHover]="true" [visible]="true"
+              [showItemNavigators]="true" [showItemNavigatorsOnHover]="true">
+              <ng-template pTemplate="item" *ngFor="let item of product.info; let i = index">
+                <div class="full-screen">
+                  <a (click)="showLightbox(i)"><i class="fas fa-expand"></i></a>
+                </div>
+                <img [src]="item.image" class="slide-img" />
+                <lib-ngx-image-zoom [thumbImage]='item.image' [fullImage]='item.image' [magnification]="1"
+                  [enableScrollZoom]="true" [enableLens]="true" [lensWidth]="200" [lensHeight]="150" zoomMode="hover">
+                </lib-ngx-image-zoom>
+              </ng-template>
+              <ng-template pTemplate="thumbnail" let-item>
+                <div class="p-grid p-nogutter p-justify-center">
+                  <img [src]="item.image"
+                    style="width: 60px; height: 60px; display: block;border-radius: 5px;border: 1px solid #f3f3f3;padding: 10px;" />
+                </div>
+              </ng-template>
+            </p-galleria> -->
+            <p-galleria [value]="product.info" [numVisible]="5" [transitionInterval]="2000" dir="ltr"
+              [responsiveOptions]="responsiveOptions" [autoPlay]="true" [circular]="true">
+              <ng-template pTemplate="item" let-item>
+                <img [src]="item.image" class="slide-img" />
+              </ng-template>
+              <ng-template pTemplate="thumbnail" let-item>
+                <div class="grid grid-nogutter justify-content-center">
+                  <img [src]="item.image"
+                    style="width: 60px; height: 60px; display: block;border-radius: 5px;border: 1px solid #f3f3f3;padding: 10px;" />
+                </div>
+              </ng-template>
+            </p-galleria>
+          </div>
+          <div class="col-lg-6 col-sm-12 pt-5">
+            <div class="info">
+              <h1>{{product.title}}</h1>
+              <div class="row pr-3 pt-2">
+                <h6>رنگ: {{colorName}}</h6>
+              </div>
+              <div class="row pr-3 pt-2">
+                <div *ngFor="let item of product.info; let j = index">
+                  <button type="button" [style.background]="item.colorCode" (click)="getColorName(item, j)"></button>
+                </div>
+              </div>
+              <p>{{product.detail}}</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-12 align-self-center">
+            <div class="card-seller" *ngFor="let item of product.Seller;">
+              <div class="row justify-content-center align-self-center">
+                <img [src]="item.logo" class="logo-img" />
+              </div>
+              <div class="row mt-3 justify-content-center align-self-center">
+                <h2>{{item.shopName}}</h2>
+              </div>
+              <div class="row mb-3 mt-3 justify-content-center align-self-center">
+                <h2>مدیریت: {{item.fullName}}</h2>
+              </div>
+              <mat-divider></mat-divider>
+              <div class="row justify-content-center align-self-center">
+                <p class="ml-auto" *ngIf="product.info[0].remainsNumber>0"> {{colorRemain}} عدد در انبار موجود است</p>
+                <p class="ml-auto" *ngIf="product.info[0].remainsNumber==0">در انبار موجود نمی باشد</p>
+                <p-badge [value]="'موجود'" *ngIf="product.info[0].remainsNumber>0" severity="success" styleClass="m-2">
+                </p-badge>
+                <p-badge [value]="'ناموجود'" *ngIf="product.info[0].remainsNumber==0" severity="warning"
+                  styleClass="m-2">
+                </p-badge>
+              </div>
+              <mat-divider></mat-divider>
+              <div class="row mt-3 justify-content-center align-self-center">
+                <h4 *ngIf="product.discountID===('62fd54e923eb246818407526')">{{colorPrice | number}}
+                  تومان</h4>
+                <h4 *ngIf="product.discountID!==('62fd54e923eb246818407526')" class="ml-1 dis">{{colorPrice | number}}
+                </h4>
+                <h4 *ngIf="product.discountID!==('62fd54e923eb246818407526')">{{colorPrice - colorPrice
+                  * product.Discount[0].discountPercent / 100 | number}} تومان</h4>
+                <div class="mr-auto" *ngIf="product.discountID!==('62fd54e923eb246818407526')">
+                  <p-badge [value]="product.Discount[0].discountPercent+'%'" severity="danger">
+                  </p-badge>
+                </div>
+
+              </div>
+              <div class="row justify-content-center ">
+                <button (click)="addToCart()" class="btn add-btn" mat-raised-button type="submit">افزودن به سبد
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <p-tabView class="tabview">
+      <p-tabPanel header="مشخصات" leftIcon="pi pi-info-circle">
+        <p-table [value]="product.features">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>ویژگی</th>
+              <th>مقدار</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-item>
+            <tr>
+              <td>
+                {{item.feature}}
+              </td>
+              <td>
+                <span class="image-text">{{item.featureValues}}</span>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </p-tabPanel>
+
+      <p-tabPanel header="دیدگاه ها" leftIcon="pi pi-comments">
+
+        <p-carousel *ngIf="comments.length>0" [value]="comments" [circular]="true" dir="ltr" [responsive]="true"
+          [numVisible]="5" [numScroll]="5" [autoplayInterval]="5000" [responsiveOptions]="responsiveOptions2">
+
+          <ng-template let-item pTemplate="item">
+            <div class="comment rtl justify-content-center align-self-center">
+              <div class="row pl-2 pr-2">
+                <img [src]="item.User[0].image" alt="" class="c-img" />
+                <h6>{{item.User[0].fullName}}</h6>
+              </div>
+              <p>{{item.commentText}}</p>
+            </div>
+          </ng-template>
+
+        </p-carousel>
+        <mat-divider></mat-divider>
+
+        <form [formGroup]="form" class="w-100 mt-3">
+
+          <div class="row pt-3 justify-content-center">
+
+            <div class="col-lg-6">
+              <textarea class="form-control" formControlName="message" placeholder="دیدگاه خود را وارد کنید"
+                name="message" rows="3" required></textarea>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <button type="button" pButton icon="pi pi-comments" (click)="registerComment()" label="ثبت دیدگاه"></button>
+          </div>
+        </form>
+      </p-tabPanel>
+
+    </p-tabView>
+
+  </div>
+</div>

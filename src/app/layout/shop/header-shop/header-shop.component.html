@@ -1,0 +1,74 @@
+<div class="head">
+  <div class="row">
+      <p-tabMenu #tab [model]="items" [activeItem]="activeItem" (click)="activateMenu(tab)" class="ml-auto"></p-tabMenu>
+      <i class="pi pi-shopping-bag" pBadge value="3" (click)="showBasket()"></i>
+    </div>
+</div>
+
+<p-sidebar [(visible)]="displayBasket" [showCloseIcon]="true" [baseZIndex]="100000000000" dir="rtl">
+  <div class="text-center">
+    <img width="70px" src="../../../../../assets/images/logo-doukme.png" class="img-fluid mb-3" alt="" />
+  </div>
+  <!-- <div class="d-flex flex-column">
+    <div dir="rtl" *ngIf="cartlist.length != 0">
+      <ul class="list-group list-group-numbered" *ngFor="let item of cartlist">
+        <li
+          class="
+            list-group-item
+            d-flex
+            justify-content-between
+            align-items-start
+            mb-1
+          "
+        >
+          <div class="ms-2 me-auto">
+            <div class="title">{{ item.name }}</div>
+            {{ item.price | number }} تومان
+          </div>
+          <div class="title">تعداد: {{ item.number }}</div>
+
+          <span
+            class="fa fa-trash text-danger"
+            (click)="onDeleteCart(item)"
+          ></span>
+        </li>
+      </ul>
+      <ul class="list-group mt-3">
+        <li
+          class="
+            list-group-item
+            d-flex
+            justify-content-between
+            align-items-center
+          "
+        >
+          مبلغ تخفیف:
+          <span>{{ pricePercent | number }} تومان</span>
+        </li>
+        <li
+          class="
+            list-group-item
+            d-flex
+            justify-content-between
+            align-items-center
+          "
+        >
+          مبلغ کل:
+          <span>{{ sumOfPrice | number }} تومان</span>
+        </li>
+      </ul>
+
+      <button
+        pButton
+        type="submit"
+        class="mx-auto d-block mt-2 text-white p-button-danger"
+        (click)="gotoCart()"
+      >
+        مشاهده سبد و تکمیل خرید
+      </button>
+    </div>
+    <div class="dropcart__products-list" *ngIf="cartlist.length === 0"> -->
+  <p class="text-center">سبد خرید شما خالی است.</p>
+  <!-- </div>
+  </div> -->
+</p-sidebar>

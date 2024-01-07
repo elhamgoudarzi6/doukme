@@ -1,0 +1,95 @@
+.head {
+  background: #fff;
+  padding:0 30px;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  opacity: 90%;
+}
+
+:host::ng-deep .p-overlay-badge {
+  font-size: 24px;
+  color: var(--color-primary);
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+:host::ng-deep .p-overlay-badge .p-badge {
+  font-size: 10px;
+  color: var(--color-primary);
+  font-family: 'IRANSans_Bold' !important;
+  background-color: var(--color-primary);
+  color: #fff;
+  width: 10px;
+}
+
+:host::ng-deep .p-tabmenu {
+  padding: 0;
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav {
+  border-color: transparent;
+}
+
+:host::ng-deep .p-menuitem-link {
+  font-size: 12px;
+  color: #777;
+  font-family: 'IRANSans_Bold' !important;
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link .p-menuitem-icon {
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+:host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+  border-color: transparent;
+ padding:15px;
+
+}
+
+
+@media screen and (max-width: 600px) {
+  :host::ng-deep .p-overlay-badge {
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  
+  :host::ng-deep .p-overlay-badge .p-badge {
+    font-size: 10px;
+  }
+  :host::ng-deep .p-menuitem-link {
+    font-size: 10px;
+  }
+  :host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+   padding:15px 10px;
+  }
+  :host::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link .p-menuitem-icon {
+    margin-left:3px;
+  }
+}
+
+// @media (min-width: 992px) {
+
+// }
+
+// @media screen and (max-width: 900px) and (min-width: 600px),
+// (min-width: 1100px) {
+
+// }

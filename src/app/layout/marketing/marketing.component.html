@@ -1,0 +1,33 @@
+<section class="theme-container">
+    <div class="row mt-5 mb-5 ml-5 mr-5">
+        <div class="col-lg-3 col-md-6 mt-5 mt-md-0" *ngFor="let item of packages; let i=index">
+            <div class="box featured mt-2">
+                <!-- <span class="advanced">Advanced</span> -->
+                <div class="header">
+                    <h3>{{item.title}} ({{item.timespan}}) </h3>
+                    <h3>{{item.price | number}} تومان</h3>
+                </div>
+                <ul *ngFor="let item of packages[i].features" class="row">
+                    <li>{{item.feature}}</li>
+                    <i class="pi pi-check-square mr-1" *ngIf="item.status===true"></i>
+                    <i class="pi pi-minus mr-1" *ngIf="item.status===false"></i>
+                </ul>
+                <mat-divider></mat-divider>
+                <div class="btn-wrap">
+                    <a href="#" class="btn-buy">ثبت سفارش</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card ltr">
+        <p-carousel [value]="cv" [circular]="true" [responsive]="true" [numVisible]="4" [numScroll]="4"
+            [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+            <ng-template pTemplate="header">
+                <h5>نمونه کارها</h5>
+            </ng-template>
+            <ng-template let-item pTemplate="item">
+                <img [src]="item.image" class="slide" />
+            </ng-template>
+        </p-carousel>
+    </div>
+</section>

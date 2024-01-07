@@ -1,0 +1,150 @@
+<p-toast position="center" [life]="50000"></p-toast>
+<section class="container-fluid">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row no-gutters justify-content-center">
+          <div class="col-lg-12 col-sm-12 align-self-center">
+            <ul class="list-inline panel-breadcrumb">
+              <li class="list-inline-item pointer" [routerLink]="['/']"><i class="pi pi-home"></i></li>
+              <li class="list-inline-item pointer" [routerLink]="['/reservation']">سامانه نوبت دهی</li>
+              <li class="list-inline-item current">پروفایل</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-lg-4 col-sm-12">
+      <div class="card">
+        <div class="text-center cat">
+          <ul class="list-inline panel-breadcrumb">
+            <li class="list-inline-item current">{{employee.EmployeeCat[0].title}}</li>
+            <li class="list-inline-item current">{{employee.EmployeeSubCat[0].title}}</li>
+          </ul>
+        </div>
+        <img src="../../../../assets/images/female.png" class="img-fluid d-block mx-auto profile" width="100" />
+        <h6 class="text-center my-3">{{employee.fullName}}</h6>
+        <ul class="list-group my-3">
+          <li class="list-group-item border-0 text-right">
+            <b>امتیاز:</b> <a class="float-left text-muted">
+              <p-rating [iconOnStyle]="{'color':'orange'}" [ngModel]="employeeRating" [readonly]="true" [stars]="5"
+                [cancel]="false">
+              </p-rating>
+            </a>
+          </li>
+          <mat-divider></mat-divider>
+          <li class="list-group-item border-0 text-right">
+            <b>تخصص:</b> <a class="float-left text-muted">{{employee.ability}}</a>
+          </li>
+          <mat-divider></mat-divider>
+          <li class="list-group-item border-0 text-right">
+            <b>سابقه کار:</b> <a class="float-left text-muted">{{employee.experience}}</a>
+          </li>
+          <mat-divider></mat-divider>
+          <li class="list-group-item border-0 text-right">
+            <!-- https://www.instagram.com/ -->
+            <b>اینستاگرام:</b> <a [href]="'https://www.instagram.com/'+employee.instaPage"
+              class="float-left text-muted ltr">{{employee.instaPage}}</a>
+          </li>
+        </ul>
+        <div class="row justify-content-center">
+          <span style="font-family:IRANSans_Bold;font-size: 14px;padding-left: 10px;"> ثبت امتیاز: </span>
+          <p-rating [iconOnStyle]="{'color':'orange'}" (onRate)="onRateChange($event)" [(ngModel)]="rate"
+            [cancel]="false"></p-rating>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="col-lg-12 col-sm-12">
+          <div class="row justify-content-center">
+            <div class="col-lg-12 mb-1">
+              <span class="p-fluid">
+                <p-autoComplete [lazy]="true" [dropdown]="true" (onSelect)="onDateChange($event)"
+                 (onClear)="onDateChange($event)" [suggestions]="filteredDates"
+                  placeholder="جستجوی تاریخ..." (completeMethod)="filterDate($event)" field="date">
+                </p-autoComplete>
+              </span>
+            </div>
+          </div>
+          <div class="row justify-content-center mt-4">
+            <span>{{selectedDate.day}} : {{selectedDate.date}} </span>
+          </div>
+          <mat-divider class="mt-2"></mat-divider>
+          <div class="row justify-content-right mt-3">
+            <div class="col-lg-4 col-sm-6" *ngFor="let item of selectedDate.times">
+              <p-radioButton [disabled]="item.status===false" name="groupname" [value]="item.time"
+                [(ngModel)]="selectedTime" (onClick)="onClickselectTime(item.time)">
+              </p-radioButton>
+              {{item.time}}
+            </div>
+          </div>
+          <mat-divider class="mt-3"></mat-divider>
+          <div class="row justify-content-center mt-2">
+            <div class="col-6">
+              <p-checkbox name="groupname" value="val1" label="نوبت حضوری"></p-checkbox>
+              <p-checkbox name="groupname" value="val2" label="نوبت مجازی"></p-checkbox>
+            </div>
+            <div class="col-6">
+              <p-radioButton name="groupname" value="val1" label="مشاوره تلفنی">
+              </p-radioButton>
+              <p-radioButton name="groupname" value="val2" label="مشاوره رایگان">
+              </p-radioButton>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="text-center">
+              <button (click)="registerReservation()" class="btn btn-block search-btn" mat-raised-button
+                type="submit">ثبت نوبت
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-lg-8 col-sm-12">
+      <div class="card">
+        <h6 class="text-right my-3">بیوگرافی</h6>
+        <p>{{employee.bio}}</p>
+        <ul class="list-group my-3">
+          <li class="list-group-item border-0 text-right">
+            <a class="float-right text-muted"><i class="pi pi-phone primary-color ml-1"></i>شماره تماس :
+              {{employee.workNumber}}
+            </a>
+          </li>
+          <mat-divider></mat-divider>
+          <li class="list-group-item border-0 text-right">
+            <a class="float-right text-muted"> <i class="pi pi-clock primary-color ml-1"></i>ساعات
+              کاری : {{employee.workTime}}
+            </a>
+          </li>
+          <mat-divider></mat-divider>
+          <li class="list-group-item border-0 text-right">
+            <a class="float-right text-muted ltr">
+              آدرس : {{employee.address}}<i class="pi pi-map-marker primary-color ml-1"></i></a>
+          </li>
+        </ul>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.279011420146!2d48.36552388546027!3d33.520130753031566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3feec0e35cc6c9bd%3A0x2b1e57d1b69e7f3b!2z2b7Yp9ix2qkg2LnZhNmFINmIINmB2YbYp9mI2LHbjCDYp9iz2KrYp9mGINmE2LHYs9iq2KfZhg!5e0!3m2!1sfa!2s!4v1630448856184!5m2!1sfa!2s"
+            width="100%" height="240" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="card ltr">
+        <p-carousel [value]="gallery" [circular]="true" [responsive]="true" [numVisible]="3" [numScroll]="3"
+          [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+          <ng-template pTemplate="header">
+            <h5>نمونه کارها</h5>
+          </ng-template>
+          <ng-template let-image pTemplate="item">
+            <img [src]="image.path" class="slide" />
+          </ng-template>
+        </p-carousel>
+      </div>
+    </div>
+  </div>
+</section>

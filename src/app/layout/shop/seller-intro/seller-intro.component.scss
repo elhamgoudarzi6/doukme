@@ -1,0 +1,342 @@
+:host::ng-deep .p-button {
+  background: var(--color-primary);
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+:host::ng-deep .p-button:hover {
+  background: var(--color-primary) !important;
+}
+
+:host::ng-deep .p-button.p-button-outlined {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary);
+}
+
+:host::ng-deep .p-button.p-button-outlined:enabled:hover {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary);
+  background: transparent !important;
+}
+
+:host::ng-deep .p-button.p-button-outlined:disabled:hover {
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary);
+  background: transparent !important;
+}
+
+:host::ng-deep .p-fluid .p-inputtext {
+  border-radius: 5px;
+}
+
+:host::ng-deep .p-divider.p-divider-vertical {
+  padding: 0px !important;
+}
+
+:host::ng-deep .p-divider-solid.p-divider-vertical:before {
+  border-left-style: solid !important;
+}
+
+:host::ng-deep .p-button-label {
+  padding: 0px 30px !important;
+}
+
+svg {
+  max-width: 450px;
+}
+
+.description {
+  font-size: 15px;
+  font-family: IRANSans_Light !important;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.p-fluid {
+  padding-right: 60px;
+  margin-top: 30px;
+}
+
+.p-fluid p {
+  font-size: 14px;
+  font-family: IRANSans_Light !important;
+  margin-top: 15px;
+  text-align: right;
+
+}
+
+.p-fluid a {
+  font-size: 12px;
+  color: var(--color-primary);
+}
+
+.p-fluid h4 {
+  font-size: 16px;
+  color: #777;
+  text-align: right;
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
+  margin: 15px 10px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .vertical {
+    display: none;
+  }
+
+  .card {
+    margin: 15px -5px;
+  }
+
+  :host::ng-deep .mat-expansion-panel {
+    padding:20px 0px !important;
+    margin: 10px 5px !important;
+  }
+
+  :host::ng-deep .mat-expansion-panel-header-title {
+    font-size: 12px !important;
+
+  }
+
+  .p-fluid {
+    padding-right: 30px;
+  }
+
+  .field input {
+    max-width: 100%;
+  }
+}
+
+.field {
+  text-align: right;
+}
+
+.field input {
+  max-width: 80%;
+}
+
+.field ul li {
+  font-size: 12px !important;
+  //color: var(--color-primary);
+  margin-top: 2px;
+
+}
+
+.img-cv {
+  max-width: 340px;
+}
+
+.card ul {
+  list-style: none;
+  color: #777;
+  text-align: right;
+  line-height: 15px;
+}
+
+.card ul li {
+  padding-bottom: 15px;
+  font-family: 'IRANSans_Light' !important;
+  font-size: 16px;
+}
+
+.card ul i {
+  font-size: 20px;
+  padding-left: 10px;
+  color: var(--color-primary);
+}
+
+
+.icon-box svg {
+  max-width: 80px;
+}
+
+.icon-box {
+  padding: 20px 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 20px 0 rgba(18, 66, 101, 0.08);
+  transition: all 0.3s ease-in-out;
+  border-radius: 20px;
+  z-index: 1;
+  text-align: center;
+  margin: 10px;
+}
+
+.icon-box:hover {
+  transform: scale(1.02);
+}
+
+.icon-box .title {
+  margin-top: 15px;
+}
+
+.icon-box .title a {
+  color: #555;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.icon-box .description {
+  font-size: 14px;
+  line-height: 25px;
+  margin-top: 12px;
+}
+
+
+.nuxt-link-active {
+  cursor: pointer;
+}
+
+:host::ng-deep .mat-expansion-panel {
+  background-color: #fff;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
+  margin: 10px 20px;
+  padding: 20px;
+  border-radius: 5px !important;
+}
+
+::ng-deep .mat-expansion-panel:hover {
+  background-color: #fffffc;
+}
+
+:host::ng-deep .mat-expansion-panel-header-title {
+  margin-right: 0px !important;
+  font-family: IRANSans_Bold !important;
+  font-size: 14px;
+  color: #777;
+  text-align: right;
+}
+
+
+
+:host::ng-deep .mat-expansion-panel-header-description {
+  text-align: justify;
+  font-family: IRANSans_Light !important;
+  font-size: 14px;
+  color: #777;
+  margin-top: 15px;
+}
+
+::ng-deep .main-pc-toolbar,
+::ng-deep .main-mobile-toolbar {
+  background-color: #FFFFFF;
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+}
+
+::ng-deep .main-pc-toolbar .menu-img,
+::ng-deep .main-mobile-toolbar .menu-img {
+  fill: var(--color-green);
+}
+
+::ng-deep .main-pc-toolbar .nav-link {
+  color: rgba($color: #000000, $alpha: .8) !important;
+}
+
+
+:host ::ng-deep .custom-marker {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3 !important;
+  border-radius: 50%;
+  border: 0.5px solid #fafafa;
+  z-index: 1;
+  font-size: 13px;
+  font-family: IRANSans_Bold;
+}
+
+::ng-deep .p-timeline-event-content,
+::ng-deep .p-timeline-event-opposite {
+  line-height: 1;
+}
+
+@media screen and (max-width: 960px) {
+  .vertical {
+    display: none;
+  }
+  :host ::ng-deep .customized-timeline .p-timeline-event:nth-child(even) {
+    flex-direction: row !important;
+  }
+
+  :host::ng-deep .p-datatable .p-datatable-tbody>tr>td:nth-child(even) {
+    flex-direction: row !important;
+
+  }
+
+  :host ::ng-deep .customized-timeline .p-timeline-event-content {
+    text-align: left !important;
+  }
+
+  :host ::ng-deep .customized-timeline .p-timeline-event-opposite {
+    flex: 0;
+  }
+
+  :host ::ng-deep .customized-timeline .p-card {
+    margin: 5px 0 0;
+    padding: 5px;
+  }
+
+  :host::ng-deep .p-card .p-card-content {
+    font-size: 12px !important;
+  }
+
+  :host::ng-deep .p-card .p-card-footer {
+    font-size: 12px !important;
+  }
+
+}
+
+
+
+:host ::ng-deep .p-card .p-card-title {
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: -2px;
+  font-family: IRANSans_Bold;
+  color: #4d4d4d;
+}
+
+:host ::ng-deep .custom-marker {
+  color: #4d4d4d;
+}
+
+:host::ng-deep .p-timeline-vertical.p-timeline-alternate .p-timeline-event:nth-child(even) .p-timeline-event-oppositeP {
+  font-size: 12px;
+  color: #fff;
+}
+
+
+
+::ng-deep .customized-timeline {
+  margin: 20px 10px;
+}
+
+:host::ng-deep .p-card {
+  border-radius: 10px;
+  padding: 20px 10px;
+  margin: 0 20px;
+}
+
+:host::ng-deep .p-card .p-card-content {
+  font-size: 14px;
+  text-align: center;
+  font-family: 'IRANSans_Bold' !important;
+  margin-top: -15px;
+
+}
+
+:host::ng-deep .p-card .p-card-footer {
+  font-size: 14px;
+  text-align: center;
+  font-family: 'IRANSans_Light' !important;
+  margin-top: -15px;
+}

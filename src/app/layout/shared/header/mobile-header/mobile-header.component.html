@@ -1,0 +1,32 @@
+<div id="mobile-fixed" class="top-toolbar container-fluid top-app-bar">
+  <div class="row h-100">
+    <div class="col align-self-center">
+      <div class="row fw-500 d-flex pr-3">
+        <span class="d-flex top-bar-item">
+          <a (click)="displayMobileMenu=true">
+            <i class="fa fa-bars icon"></i>
+          </a>
+        </span>
+      </div>
+    </div>
+    <div class="col align-self-center">
+      <img src="../../../../../assets/images/logo-doukmew.png" alt="about">
+    </div>
+
+    <div class="col d-flex flex-row-reverse align-self-center">
+      <div class="row fw-500 d-flex pl-3">
+        <p-button icon="pi pi-user" routerLink="/auth"></p-button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- side MENU -->
+<p-sidebar [(visible)]="displayMobileMenu" [style]="{ width: '15em' }" position="right" [showCloseIcon]="true"
+  [baseZIndex]="10000">
+  <div class="d-flex flex-column">
+    <div class="mb-auto">
+      <p-panelMenu [model]="items" [style]="{ width: '100%' }"></p-panelMenu>
+    </div>
+  </div>
+</p-sidebar>

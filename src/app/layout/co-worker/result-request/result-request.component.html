@@ -1,0 +1,132 @@
+<p-toast position="center"></p-toast>
+
+<section class="theme-container">
+  <div class="card  align-items-center justify-content-center mb-2">
+    <div class="row mt-2">
+      <div class="col-lg-12 col-sm-12">
+        <p class="text-warning" *ngIf="result.status===false">
+          درخواست شما در حال بررسی می باشد
+        </p>
+        <p class="text-success" *ngIf="result.result===true">
+          درخواست شما تایید شد.
+        </p>
+        <p class="text-danger" *ngIf="result.result===false">
+          متاسفانه درخواست شما رد شد.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row p-5">
+      <form [formGroup]="form" (ngSubmit)="submitForm()" class="w-100">
+        <div class="row">
+          <div class="col-lg-4 col-sm-12 mb-3">
+            <span class="p-fluid">
+              <p-autoComplete [lazy]="true" [dropdown]="true" (onSelect)="onCatChange($event)"
+                (onClear)="onCatChange($event)" [suggestions]="filteredCats"
+                placeholder="-- گروه شغلی را انتخاب کنید --" (completeMethod)="filterCat($event)" field="title">
+              </p-autoComplete>
+            </span>
+          </div>
+          <div class="col-lg-4 mb-3">
+            <input formControlName="mobile" name="mobile" pInputText placeholder="شماره موبایل" />
+          </div>
+          <div class="col-lg-4 mb-3">
+            <input pKeyFilter="int" formControlName="phone" pKeyFilter="int" maxlength="11" minlength="11" name="phone"
+              pInputText placeholder="تلفن ثابت" required />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-sm-12 mb-3">
+            <input name="fullName" type="text" pInputText placeholder="نام و نام خانوادگی" formControlName="fullName" />
+            <ul class="mt-1 text-right list-inline" *ngFor="let error of errorMessages.fullName">
+              <li class="font-small text-danger font-weight-bold list-inline-item" *ngIf="form.get('fullName').hasError(error.type) &&
+                  (form.get('fullName').dirty || form.get('fullName').touched)">{{ error.message }}
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-sm-12 mb-3">
+            <input name="nationalCode" type="text" pInputText placeholder="کد ملی" formControlName="nationalCode" />
+            <ul class="mt-1 text-right list-inline" *ngFor="let error of errorMessages.nationalCode">
+              <li class="font-small text-danger font-weight-bold list-inline-item" *ngIf="form.get('nationalCode').hasError(error.type) &&
+                  (form.get('nationalCode').dirty || form.get('nationalCode').touched)"> {{ error.message }}
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-sm-12 mb-3">
+            <input name="address" type="text" pInputText placeholder="آدرس" formControlName="address" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 mb-3">
+            <textarea formControlName="bio" rows="5" name="bio" pInputText placeholder="معرفی کلی"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-2 col-sm-12">
+            <label class="panel-form-label">تصویر پروفایل</label>
+            <img [src]="result.image" class="img-fluid" width="120"
+              *ngIf="result.image != null || result.image != ''" />
+          </div>
+          <div class="col-lg-10 col-sm-12 mb-2">
+            <p-fileUpload chooseLabel="انتخاب تصویر" uploadLabel="آپلود تصویر" cancelLabel="انصراف"
+              [customUpload]="true" (uploadHandler)="onFileUpload($event,'image')"
+              invalidFileSizeMessageDetail="حداکثر سایز فایل 2 مگابایت می باشد"
+              invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد" accept="image/jpeg,image/png"
+              [maxFileSize]="2000000">
+            </p-fileUpload>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-2 col-sm-12">
+            <label class="panel-form-label">تصویر کارت ملی</label>
+            <img [src]="result.nationalCodeFile" class="img-fluid" width="150"
+              *ngIf="result.nationalCodeFile != null || result.nationalCodeFile != ''" />
+          </div>
+          <div class="col-lg-10 col-sm-12 mb-2">
+            <p-fileUpload chooseLabel="انتخاب تصویر" uploadLabel="آپلود تصویر" cancelLabel="انصراف"
+              [customUpload]="true" (uploadHandler)="onFileUpload($event,'nationalCodeFile')"
+              invalidFileSizeMessageDetail="حداکثر سایز فایل 2 مگابایت می باشد"
+              invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد" accept="image/jpeg,image/png"
+              [maxFileSize]="2000000">
+            </p-fileUpload>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-2 col-sm-12">
+            <label class="panel-form-label">تصویر آخرین مدرک تحصیلی</label>
+            <img [src]="result.degreeFile" class="img-fluid" width="150"
+              *ngIf="result.degreeFile != null || result.degreeFile != ''" />
+          </div>
+          <div class="col-lg-10 col-sm-12 mb-2">
+            <p-fileUpload chooseLabel="انتخاب تصویر" uploadLabel="آپلود تصویر" cancelLabel="انصراف"
+              [customUpload]="true" (uploadHandler)="onFileUpload($event,'degreeFile')"
+              invalidFileSizeMessageDetail="حداکثر سایز فایل 2 مگابایت می باشد"
+              invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد" accept="image/jpeg,image/png"
+              [maxFileSize]="2000000">
+            </p-fileUpload>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-sm-12">
+            <label class="panel-form-label pt-3">فایل رزومه</label>
+            <!-- <pdf-viewer [src]="result.cvFile" [render-text]="true" [original-size]="false" [page]="1"
+              style="width: 400px; height: 400px">
+            </pdf-viewer> -->
+            <p-fileUpload chooseLabel="انتخاب فایل" uploadLabel="آپلود فایل" cancelLabel="انصراف" [customUpload]="true"
+              (uploadHandler)="onFileUpload($event,'cvFile')"
+              invalidFileSizeMessageDetail="حداکثر سایز فایل 2 مگابایت می باشد"
+              invalidFileSizeMessageSummary="اندازه فایل بیش از حد مجاز می باشد" accept="application/pdf"
+              [maxFileSize]="2000000">
+            </p-fileUpload>
+          </div>
+        </div>
+        <div class="row align-items-center justify-content-center mt-5">
+          <p-button type="submit" label="ویرایش" [disabled]="form.invalid"></p-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
